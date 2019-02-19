@@ -1,5 +1,5 @@
 const Telegraf = require('telegraf');
-const { bot_key } = require('./env.json');
+const { bot_key } = require('./vars.json');
 
 const session = require('telegraf/session');
 const bot = new Telegraf(bot_key);
