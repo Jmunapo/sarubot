@@ -1,11 +1,28 @@
 const Telegraf = require('telegraf');
 const { bot_key } = require('./vars.json');
+const Stage = require('telegraf/stage');
+
 
 const session = require('telegraf/session');
 const bot = new Telegraf(bot_key);
 
+bot.use(session());
 
-bot.use(session())
+
+const startPoll = require('./scenes/start-poll');
+
+
+
+
+const stage = new Stage([
+  startPoll
+], { ttl: 60 * 60 });
+
+bot.use(stage.middleware())
+
+bot.start(async (ctx) => {
+  ctx.scene.enter('start_poll');
+});
 
 
 
