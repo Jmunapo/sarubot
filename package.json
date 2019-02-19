@@ -1,0 +1,25 @@
+{
+  "name": "sarubot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "bot.js",
+  "scripts": {
+    "start": "node bot.js",
+    "dev": "supervisor -q ./bot.js"
+  },
+  "keywords": [],
+  "author": "joemags <joe@joemags.co.zw> (https://joemags.co.zw)",
+  "license": "ISC",
+  "dependencies": {
+    "firebase": "^5.8.2",
+    "numeral": "^2.0.6",
+    "plur": "^3.0.1",
+    "telegraf": "^3.27.0"
+  },
+  "devDependencies": {
+    "supervisor": "^0.12.0"
+  },
+  "engines": {
+    "node": "10.10.0"
+  }
+}
